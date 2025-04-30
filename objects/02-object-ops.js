@@ -85,9 +85,23 @@ for (let restaurant of restaurants) {
 /*
 	Create two objects representing different local attractions (zoo, gardens, museums, etc), each with the following properties: name, location, adultTicketPrice, childTicketPrice, and famousFeatures (array of three strings). Be creative! Place the objects in an array.
 */
-
+	
 // TODO: create objects and put them in an array
+let zoo = {
+	name: "St. Louis Zoo",
+	location: "St. Louis",
+	adultTicketPrice: 19.95,
+	childTicketPrice: 16.95,
+	famousFeatures: ["Zoo Train", "Stingray Cove", "Animals", "World Fair Flight Cage"],
+};
 
+let butterflyHouse = {
+	name: "Sophia M. Sachs Butterfly House",
+	location: "St. Louis",
+	adultTicketPrice: 8.00,
+	childTicketPrice: 0.00,
+	famousFeatures: ["butterflies", "carousel", "garden"]
+};
 /*
 	Loop through the array, then within that for loop, use a for...in loop to grab values from each key and print them to the console. If you come across a key storing an array, print each element in the array instead of the array itself. Remember that you need a new index variable with each nested FOR loop (i, j are common).
 
@@ -95,6 +109,17 @@ for (let restaurant of restaurants) {
 */
 
 // TODO: use nested loops to print values inside objects
+let attractions = [zoo, butterflyHouse];
+
+for (let someKey in zoo) {
+	if (Array.isArray(zoo[someKey])) {
+		for (element of zoo[someKey]) {
+			console.log(`${someKey} : ${element}`);
+		}
+	}
+	else console.log(`${someKey} : ${zoo[someKey]}`);
+}
+
 
 /*
 	Last task: loop through the outer array and print a single template literal for each attraction using placeholders referencing the object at each index. Here's an example:
@@ -103,7 +128,7 @@ for (let restaurant of restaurants) {
 	Kendrick-Lampton Art Museum - Cedar Pointe, ID
 	**********************************************
 	A favorite with the locals, the Kendrick-Lampton Art Museum boasts over a dozen features, including the Manet Gallery, Renaissance Wing, and Tiffany Collection. Admission is $26 for adults, $14 for children ages 5-12, and free for children 4 and under.
-*/
+
 
 // TODO: Print a template literal
-
+*/
